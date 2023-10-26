@@ -29,4 +29,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: Build with Gradle
-      run: gradlew clean build
+      run: |
+         export packageUser=${{ GITHUB_USER }}
+         export packagePAT=${{ secrets.GITHUB_TOKEN }}
+         ./gradlew clean build
