@@ -88,7 +88,6 @@ public class RecordChannelUtils {
         } catch (Exception e) {
             String message =
                     "error occurred while converting character channel to textRecord channel: " + e.getMessage();
-            log.error(message, e);
             throw IOUtils.createError(message);
         }
     }
@@ -104,7 +103,6 @@ public class RecordChannelUtils {
                 return textRecordChannel.hasNext();
             } catch (BallerinaIOException e) {
                 String msg = "error occurred while checking hasNext on ReadableTextRecordChannel: " + e.getMessage();
-                log.error(msg, e);
                 throw IOUtils.createError(msg);
             }
         }
