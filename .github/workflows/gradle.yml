@@ -30,6 +30,6 @@ jobs:
         distribution: 'temurin'
     - name: Build with Gradle
       run: |
-         export packageUser=${{ GITHUB_USER }}
-         export packagePAT=${{ secrets.GITHUB_TOKEN }}
+         #export packageUser=${{ GITHUB_USER }}
+         #export packagePAT=${{ secrets.GITHUB_TOKEN }}
          ./gradlew clean build
