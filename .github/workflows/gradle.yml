@@ -31,6 +31,6 @@ jobs:
     - name: Build with Gradle
       run: |
          echo "TEST ${{ GITHUB_USER }}"
-         export packageUser=${{ secrets.GITHUB_USER }}
-         export packagePAT=${{ secrets.GITHUB_TOKEN }}
-         ./gradlew clean build
+         #export packageUser=${{ secrets.GITHUB_USER }}
+         #export packagePAT=${{ secrets.GITHUB_TOKEN }}
+         #./gradlew clean build
