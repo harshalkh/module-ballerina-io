@@ -50,6 +50,8 @@ public class Buffer {
      * </p>
      */
     private int minimumSizeOfBuffer;
+
+    private static final Logger log = LoggerFactory.getLogger(Buffer.class);
     
     public Buffer(int minimumSizeOfBuffer) {
         this.minimumSizeOfBuffer = minimumSizeOfBuffer;
