@@ -18,6 +18,8 @@
 package io.ballerina.stdlib.io.channels.base;
 
 import io.ballerina.stdlib.io.utils.BallerinaIOException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
