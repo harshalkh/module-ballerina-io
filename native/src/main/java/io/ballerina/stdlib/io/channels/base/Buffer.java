@@ -69,18 +69,12 @@ public class Buffer {
      * The operation will return null if none of the bytes are remaining in the buffer.
      * </p>
      *
-     * @param totalNumberOfBytesRequired number of bytes required.
      * @return new ByteBuffer which will contain bytes which are remaining.
      */
-    private ByteBuffer remainingContent(int totalNumberOfBytesRequired) {
+    private ByteBuffer remainingContent() {
         ByteBuffer remainingContent = null;
         if (null != byteBuffer) {
             remainingContent = byteBuffer.slice();
-        } else {
-            if (log.isDebugEnabled()) {
-                log.debug("ByteBuffer has not being initialized, buffer will be initialized while reading the " +
-                        "requested amount of " + totalNumberOfBytesRequired + " of bytes");
-            }
         }
         return remainingContent;
     }
@@ -226,7 +220,7 @@ public class Buffer {
      * @throws IOException errors which occur while reading from the channel.
      */
     public ByteBuffer get(int numberOfBytesRequested, Channel channel) throws IOException {
-        ByteBuffer remainingContent = remainingContent(numberOfBytesRequested);
+        ByteBuffer remainingContent = remainingContent();
         if (null != remainingContent && remainingContent.capacity() >= numberOfBytesRequested) {
             return copyRemainingContent(numberOfBytesRequested, remainingContent);
         } else {
