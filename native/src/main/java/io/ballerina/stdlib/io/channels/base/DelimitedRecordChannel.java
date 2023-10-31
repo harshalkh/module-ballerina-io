@@ -21,7 +21,6 @@ import io.ballerina.stdlib.io.csv.Format;
 import io.ballerina.stdlib.io.utils.BallerinaIOException;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.regex.Pattern;
 
 /**
